@@ -1,11 +1,8 @@
 {
   "name": "cross-browser-polyfill",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A polyfill to make Cross Browser Support much easier!",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "src/index.js",
   "keywords": [
     "browser",
     "polyfill",
@@ -19,6 +16,12 @@
     "url": "https://github.com/dvandervlag/cross-browser-polyfill"
   },
   "author": "Dennis van der Vlag <dvandervlag@gmail.com>",
+  "contributors": [
+    {
+      "name": "Scott Jones",
+      "email": "sjones243@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dvandervlag/cross-browser-polyfill/issues"
