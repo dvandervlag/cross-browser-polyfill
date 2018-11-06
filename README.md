@@ -12,7 +12,7 @@ npm install --save cross-browser-polyfill
 The cross-browser-polyfill is very easy to use and integrate in your projects.
 You can require it in your index.js or app.js file like this:
 ```javascript
-require('cross-browser-polyfill')
+import('cross-browser-polyfill')
 ```
 
 ## License
