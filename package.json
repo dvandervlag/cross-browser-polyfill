@@ -1,6 +1,6 @@
 {
   "name": "cross-browser-polyfill",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A polyfill to make Cross Browser Support much easier!",
   "main": "src/index.js",
   "keywords": [

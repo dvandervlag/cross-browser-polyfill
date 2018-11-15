@@ -6,11 +6,23 @@ You can choose to polyfill all or a select number of features found in this pack
 ## Features & Usage
 This package brings numerous functionality to the browser that may be missed during transpiling or when desired for smaller release packages.
 
+## Browser support
+
+The polyfill has been tested in the following browsers:
+
+* Chrome
+* Firefox 3.5+
+* Internet Explorer 11
+* Microsoft Edge
+* Safari 10+
+
 ### .append()
 Append allows you to append elements and strings safely into the browser without causing large repaints or drastic node-tree changes.
 
 **Example:**
-`elementNode.append('<div class="my-custom-element"> My_string </div>')`
+```javascript
+document.querySelector('body').append('<div class="my-custom-element"> My_string </div>')
+```
 
 **Arguments:**
 Strings, Template strings and Node elements are all valid arguments.
@@ -21,7 +33,9 @@ Strings, Template strings and Node elements are all valid arguments.
 Brings the closest functionality commonly found in ES6/Jquery to native none-supporting browsers. This is used to find the closest element.
 
 **Example:**
-`elementNode.closest('#myWrapper')`
+```javascript
+document.querySelector('body').closest('#someElement')
+```
 
 **Arguments:**
 All selector types are supported as valid arguments.
@@ -35,10 +49,12 @@ This returns a node element with the closest match.
 getBoundingClientRect brings more standardisation on the data you get when trying to finding the rect of a target element. It provides a singular interface and a common response object containing the .x and .y values. - This method takes no arguments.
 
 **Example:**
-`elementNode.getBoundingClientRect()`
+```javascript
+document.querySelector('body').getBoundingClientRect()
+```
 
 **Returns:**
-This will return an object:
+This will return an object
 
 -----------------
 
@@ -46,7 +62,9 @@ This will return an object:
 matches allows you to find an element that matches the exact selector you pass too it as an argument.
 
 **Example:**
-`elementNode.matches(MySelector)`
+```javascript
+document.querySelector('body').matches('.root')
+```
 
 **Arguments:**
 All selector types are supported as valid arguments.
@@ -60,31 +78,62 @@ This returns a node element with the exact match of the selector.
 prepend allows you to append an element or string safely to the beginning of a node element child list.
 
 **Example:**
-`elementNode.prepend(myElement)`
+```javascript
+var parent = document.createElement("div");
+parent.innerHTML = "prepend() works.";
+parent.prepend("This is how ");
+
+console.log(parent.textContent);
+```
 
 **Arguments:**
 Strings, Template strings and Node elements are all valid arguments.
 
 -----------------
 
-### .replaceWith()
+### .remove()
+```javascript
+  var element = document.querySelector('#someElement')
+  element.remove()
+```
 
 **Example:**
-`elementNode.replaceWith()`
+`elementNode.remove()`
+
+-----------------
+
+### .replaceWith() 
+replaceWith replaces a ChildNode in the children list of its parent with a set of Node or DOMString objects. 
+
+**Example:**
+```javascript
+var parent = document.createElement("div");
+var child = document.createElement("p");
+parent.appendChild(child);
+var span = document.createElement("span");
+
+child.replaceWith(span);
+
+console.log(parent.outerHTML);
+```
+
+**Arguments**
+DOMString objects and Text nodes are valid arguments.
 
 -----------------
 
 ### .forEach()
+forEach calls the callback given in parameter once for each value pair in the list, in insertion order.
 
 **Example:**
-`elementNode.forEach()`
+```javascript
+document.querySelectorAll('div').forEach((button, i) => {
+  console.log(`Element ${button} is a div inside this document with index ${i}`);
+});
+```
 
------------------
-
-### .remove()
-
-**Example:**
-`elementNode.remove()`
+**Arguments**
+A callback function.
 
 ## Installing & initialising
 You can install the package as you usually would through NPM or yarn. E.G:
@@ -94,18 +143,36 @@ You can install the package as you usually would through NPM or yarn. E.G:
 Once it is installed you can import it into the root of your application, it it best advised to include this package and initialise it as soon as (but before) you will need it. This is usually one of the first things that should happen when your application is starting.
 
 **Import and initialise all at once**
-`import polyfill from 'cross-browser-polyfill'`
-`polyfill()`
+```javascript
+import polyfill from 'cross-browser-polyfill'
+polyfill()
+```
 
 **Import them as separate methods:**  
 You can also import and use each feature as and when you need it like so:
 
-`import {elementAppend, elementClosest, elementGetBoundingRect, elementMatches, elementReplaceWith, nodelistForEach, nodelistRemove} from 'cross-browser-polyfill'`
+```javascript
+import {
+  append, 
+  closest, 
+  getBoundingRect, 
+  matches, 
+  prepend,
+  remove, 
+  replaceWith, 
+  forEach
+} from 'cross-browser-polyfill'
+```
 
 Then initialise them as you need them like so:
-`elementAppend()`
-`elementClosest()`
-`etc`
+```javascript
+elementAppend()
+elementClosest()
+etc..
+```
+
+## Authors
+This polyfill was written by [Dennis van der Vlag](https://github.com/dvandervlag) and contributed by [Scott Jones](https://github.com/thedanzor).
 
 ## disclaimer
 **Warning** This package modifies and adds numerous native objects & methods into the browser. This may result in unintended side effects depending on what extensions, plugins or other 3rd party tools you are using. As well as browser updates that may happen in between updates of this package.  
