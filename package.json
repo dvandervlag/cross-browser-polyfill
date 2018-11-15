@@ -1,6 +1,6 @@
 {
   "name": "cross-browser-polyfill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A polyfill to make Cross Browser Support much easier!",
   "main": "src/index.js",
   "keywords": [
@@ -9,7 +9,20 @@
     "js",
     "javascript",
     "cross-browser",
-    "cross-browser-compatibility"
+    "cross-browser-compatibility",
+    "Internet Explorer",
+    "IE",
+    "ES6",
+    "Babel",
+    "Transpile",
+    "append ie",
+    "closest ie",
+    "getBoundingClientRect",
+    "matches ie",
+    "prepend ie",
+    "remove ie",
+    "replacewith ie",
+    "foreach nodelist ie"
   ],
   "repository": {
     "type": "git",
