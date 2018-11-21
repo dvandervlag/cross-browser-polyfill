@@ -4,7 +4,7 @@ var DocumentFragmentPrototype = window.DocumentFragment.prototype
 
 export default function () {
   // Polyfill Element prototype to support prepend functionality.
-  if (!ElementPrototype.prepend || DocumentPrototype.prepend || DocumentFragmentPrototype.prepend) {
+  if (!ElementPrototype.prepend || !DocumentPrototype.prepend || !DocumentFragmentPrototype.prepend) {
     ElementPrototype.prepend = DocumentPrototype.prepend = DocumentFragmentPrototype.prepend = function () {
       var argArr = window.Array.prototype.slice.call(arguments)
       var docFrag = window.document.createDocumentFragment()

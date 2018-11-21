@@ -4,7 +4,7 @@ var DocumentFragmentPrototype = window.DocumentFragment.prototype
 
 export default function () {
   // Polyfill Element prototype to support append functionality.
-  if (!ElementPrototype.append || !DocumentPrototype.append || DocumentFragmentPrototype.append) {
+  if (!ElementPrototype.append || !DocumentPrototype.append || !DocumentFragmentPrototype.append) {
     ElementPrototype.append = DocumentPrototype.append = DocumentFragmentPrototype.append = function () {
       var argArr = window.Array.prototype.slice.call(arguments)
       var docFrag = window.document.createDocumentFragment()

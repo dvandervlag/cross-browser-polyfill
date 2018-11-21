@@ -4,7 +4,7 @@ var CharacterDataPrototype = window.CharacterData.prototype
 
 export default function () {
   // Polyfill Element prototypes to support replaceWith functionality.
-  if (!ElementPrototype.replaceWith || DocumentTypePrototype.replaceWith || CharacterDataPrototype.replaceWith) {
+  if (!ElementPrototype.replaceWith || !DocumentTypePrototype.replaceWith || !CharacterDataPrototype.replaceWith) {
     ElementPrototype.replaceWith = DocumentTypePrototype.replaceWith = CharacterDataPrototype.replaceWith = function () {
       var parent = this.parentNode
       var i = arguments.length
