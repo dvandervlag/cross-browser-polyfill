@@ -20,7 +20,7 @@ export default function () {
   if (!ElementPrototype.remove || !CharacterDataPrototype.remove || !DocumentTypePrototype.remove) {
     CharacterDataPrototype.remove = DocumentTypePrototype.remove = ElementPrototype.remove = function () {
       if (this.parentNode !== null) {
-        this.parentNode.removeChild(this);
+        this.parentNode.removeChild(this)
       }
     }
   }
