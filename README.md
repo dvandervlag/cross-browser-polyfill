@@ -1,3 +1,6 @@
+[![Downloads](https://img.shields.io/npm/dt/cross-browser-polyfill.svg)]()
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
 # Welcome to the cross browser polyfill package
 the Cross-browser-polyfill is a NPM package designed to provide more native support for features not currently supported by all modern browsers.
 
