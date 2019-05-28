@@ -12,7 +12,7 @@ export default function () {
   ElementPrototype.getBoundingClientRect = function () {
     var boundingClientRect = ElementPrototype.innerGetBoundingClientRect.call(this)
 
-    if (!boundingClientRect.x) {
+    if (!('x' in boundingClientRect)) {
       // The rect we're returning is a ClientRect and not a DOMRect.
       boundingClientRect.x = boundingClientRect.left
       boundingClientRect.y = boundingClientRect.top
